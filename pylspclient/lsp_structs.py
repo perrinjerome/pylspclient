@@ -301,7 +301,7 @@ class SymbolInformation(object):
     """
     Represents information about programming constructs like variables, classes, interfaces etc.
     """
-    def __init__(self, name, kind, location, containerName=None, deprecated=False):
+    def __init__(self, name, kind, location, containerName=None, deprecated=False, range=None, selectionRange=None, detail=None, children=None):
         """
         Constructs a new SymbolInformation instance.
 
@@ -327,6 +327,10 @@ class SymbolInformation(object):
         self.deprecated = deprecated
         self.location = to_type(location, Location)
         self.containerName = containerName
+        self.range = range
+        self.selectionRange = selectionRange
+        self.detail = detail
+        self.children = children
 
 
 class ParameterInformation(object):
